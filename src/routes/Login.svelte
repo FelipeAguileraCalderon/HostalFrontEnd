@@ -34,8 +34,12 @@
     main{
         height: 100%;
         width: 100%;
-        background: url("../assets/login-background.png");
+        background-image: url("../assets/login-background.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
     }
+
     .login-main-container{
         width: 100%;
         height: 100%;
