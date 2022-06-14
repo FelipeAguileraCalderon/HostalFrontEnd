@@ -1,4 +1,5 @@
 import { navigate } from "svelte-navigator"
+import { userRegister } from "../../api/RegisterApi"
 
 const rutFormat = /^\d{1,2}\.\d{3}\.\d{3}[-][0-9kK]{1}$/
 const cellphoneFormat = /^[+]{1}\d+$/
@@ -37,7 +38,7 @@ export const registerSubmit = (event) => {
             return
         }
         user["rut"] = parseInt(userData["rut"].toString().trim().replace(/\./g,"").replace("-",""))
-        navigate("/home")
+        userRegister(user)
     }
 }
 
