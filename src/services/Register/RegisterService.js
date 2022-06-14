@@ -15,13 +15,38 @@ export const registerSubmit = (event) => {
             if(attribute !== "password"){
                 user[attribute] = userData[attribute].toString().trim();
             }
+            else{
+                user[attribute] = userData[attribute].toString()
+            }
         }
         if(!userData["rut"].toString().trim().match(rutFormat)){
             alert("Rut invalido")
+            return
+        }
+        if(!user["email"].toString().trim().match(emailFormat)){
+            alert("Email invalido")
+            return
+        }
+        if(user["password"].toString().trim().length === 0){
+            alert("Contraseña vacia")
             return
         }
         user["rut"] = parseInt(userData["rut"].toString().trim().replace(/\./g,"").replace("-",""))
         // navigate("/home", { replace: true })
         console.log(user)
     }
+}
+
+export const passwordChange = (event) => {
+    let input = document.getElementById("Password")
+    if(event.target.value.length < 6){
+        event.target.style.background =  "rgba(255, 0, 0, 0.3)"
+    }
+    else{
+        event.target.style.background =  "rgba(0, 255, 0, 0.3)"
+    }
+} 
+
+export const backgroundPassword = (event) => {
+    event.target.style =  "default"
 }

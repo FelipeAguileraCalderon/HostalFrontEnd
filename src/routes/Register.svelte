@@ -1,8 +1,6 @@
 <script>
     //Imports
-    import { registerSubmit } from "../services/Register/RegisterService";
-    //Constants
-
+    import { registerSubmit, passwordChange, backgroundPassword } from "../services/Register/RegisterService";
 
 </script>
 
@@ -23,8 +21,8 @@
                     <label for="Email" class='login-h3'>Correo electrónico:</label>
                     <input id="Email" type='email' name='email' placeholder='youremail@company.com' class='login-input'/>
                     <label for="Password" class='login-h3'>Contraseña:</label>
-                    <input id="Password" type='password'  title="6 caracteres minimo" pattern={String.raw`.{6,}$`} name='password' class="password-input"/>  
-                    <label for="Phone" class='login-h3'>Numero de telefono:</label>
+                    <input id="Password" type='password' pattern={String.raw`.{6,}`} on:change={backgroundPassword} on:input={passwordChange} title="6 caracteres minimo" name='password'/>  
+                    <label for="Phone" class='login-h3'>Numero de telefono (Ej: +123123123):</label>
                     <input id="Phone" type='text' name='cellphone' class='login-input'/>  
                 </div>
                 <div class='login-submit-container'>
@@ -37,12 +35,5 @@
 </main>
 
 <style>
-    
-    .password-input:invalid{
-        background-color: rgba(255, 0, 0, 0.3);
-    }
-    .password-input:valid{
-        background-color: rgba(0, 255, 0, 0.3);
-    }
 
 </style>
