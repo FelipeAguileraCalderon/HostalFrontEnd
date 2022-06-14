@@ -11,7 +11,7 @@ export const registerSubmit = (event) => {
         navigate("/login")
     }
     else if(event.submitter.name === "register"){
-        let user = {first_name: "", last_name: "", rut: 0, password: "", email: "", cellphone: "", is_admin: false}
+        let user = {email: "", rut: 0, first_name: "", last_name: "", cellphone: "", is_admin: false,  password: ""}
         const userData = Object.fromEntries(Array.from(new FormData(event.target)));
         for(const attribute in userData){
             if(attribute !== "password"){
