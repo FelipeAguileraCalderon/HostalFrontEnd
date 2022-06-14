@@ -1,6 +1,6 @@
 <script>
     //Imports
-    import { registerSubmit, passwordChange, backgroundPassword } from "../services/Register/RegisterService";
+    import { registerSubmit, passwordChange, backgroundPassword, cancelSubmit } from "../services/Register/RegisterService";
 
 </script>
 
@@ -15,9 +15,9 @@
                     <label for="Rut" class='login-h3'>Rut (Ej: 12.345.678-9):</label>
                     <input id="Rut" type='text' name='rut' class='login-input'/>
                     <label for="Name" class='login-h3'>Nombre:</label>
-                    <input id="Name" type='text' name='first_name' class='login-input'/> 
+                    <input id="Name" type='text' name='first_name' class='login-input' required/> 
                     <label for="LastName" class='login-h3'>Apellido:</label>
-                    <input id="LastName" type='text' name='last_name' class='login-input'/> 
+                    <input id="LastName" type='text' name='last_name' class='login-input' required/> 
                     <label for="Email" class='login-h3'>Correo electrónico:</label>
                     <input id="Email" type='email' name='email' placeholder='youremail@company.com' class='login-input'/>
                     <label for="Password" class='login-h3'>Contraseña:</label>
@@ -27,7 +27,7 @@
                 </div>
                 <div class='login-submit-container'>
                     <input name="register" type='submit' value='Registrarse'/>
-                    <input name="cancel" type="submit" value="Cancelar"/>
+                    <input name="cancel" on:change={cancelSubmit} type="submit" value="Cancelar"/>
                 </div>
             </div>
         </form>

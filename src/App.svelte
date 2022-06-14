@@ -8,7 +8,7 @@
 
 <Router>
   <Route path="/">
-    {navigate("/login", { replace: true })}
+    {navigate("/login")}
   </Route>
   <Route path="login">
     <Login />
