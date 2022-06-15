@@ -6,7 +6,8 @@ export const userRegister = (user) =>{
     .then(() => {
         navigate("/home")
     })
-    .catch(() => {
+    .catch((error) => {
+        console.log(error)
         alert("La conexión con el servidor ha fallado 😓")
     })
 }

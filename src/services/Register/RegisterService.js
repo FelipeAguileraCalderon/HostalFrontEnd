@@ -11,7 +11,7 @@ export const registerSubmit = (event) => {
         navigate("/login")
     }
     else if(event.submitter.name === "register"){
-        let user = {email: "", rut: 0, first_name: "", last_name: "", cellphone: "", is_admin: false,  password: ""}
+        let user = {email: "", username: "",rut: 0, first_name: "", last_name: "", cellphone: "", password: "", is_admin: false}
         const userData = Object.fromEntries(Array.from(new FormData(event.target)));
         for(const attribute in userData){
             if(attribute !== "password"){
@@ -38,6 +38,7 @@ export const registerSubmit = (event) => {
             return
         }
         user["rut"] = parseInt(userData["rut"].toString().trim().replace(/\./g,"").replace("-",""))
+        user["username"] = user["rut"] + user["first_name"]
         userRegister(user)
     }
 }
