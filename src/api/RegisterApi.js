@@ -3,7 +3,8 @@ import { navigate } from "svelte-navigator";
 
 export const userRegister = (user) =>{
     axios.post("http://127.0.0.1:8000/api/auth/register", user)
-    .then(() => {
+    .then((response) => {
+        console.log(response.data)
         navigate("/home")
     })
     .catch((error) => {

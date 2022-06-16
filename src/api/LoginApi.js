@@ -1,5 +1,4 @@
 import axios from "../services/Axios"
-import { currentUserData } from "./UserApi"
 import { user } from "../store"
 import { navigate } from "svelte-navigator"
 
