@@ -1,4 +1,4 @@
-import { navigate } from "svelte-navigator"
+import { navigate, useLocation } from "svelte-navigator"
 import { userRegister } from "../../api/RegisterApi"
 
 const rutFormat = /^\d{1,2}\.\d{3}\.\d{3}[-][0-9kK]{1}$/
@@ -11,7 +11,7 @@ export const registerSubmit = (event) => {
         navigate("/login")
     }
     else if(event.submitter.name === "register"){
-        let user = {email: "", username: "",rut: 0, first_name: "", last_name: "", cellphone: "", password: "", is_admin: false}
+        let user = {email: "", username: "",rut: 0, first_name: "", last_name: "", cellphone: "", password: "", is_admin: (window.location.pathname === "/register/user" ? false : true), has_booking: false, date_of_birth: new Date()}
         const userData = Object.fromEntries(Array.from(new FormData(event.target)));
         for(const attribute in userData){
             if(attribute !== "password"){

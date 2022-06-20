@@ -13,7 +13,10 @@
   <Route path="login">
     <Login />
   </Route>
-  <Route path="register">
+  <Route path="register/user">
+    <Register />
+  </Route>
+  <Route path="register/admin">
     <Register />
   </Route>
   <Route path="home">

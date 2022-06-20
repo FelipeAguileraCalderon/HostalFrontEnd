@@ -1,18 +1,11 @@
 <script>
-    import { onMount } from "svelte";
-    import { currentUserData } from "../../api/UserApi";
-    onMount(async () => {
-        try {
-            const user = await currentUserData()
-            console.log(user)
-        } catch (error) {
-            console.log(error)
-        }
-    })
+    import { user } from "../../store";
+    let userData = {}
+    user.subscribe(value => userData = value)
 </script>
 
 <main>
-    <h1>El pepe</h1>
+    <h1>`Hola ${userData.first_name}`</h1>
 </main>
 
 <style>

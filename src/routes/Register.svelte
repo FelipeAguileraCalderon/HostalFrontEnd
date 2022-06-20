@@ -8,7 +8,7 @@
     <div class='login-main-container'>
         <form class='login-form' on:submit={registerSubmit}>
             <div class='login-img-container'>
-                <img class='login-img' src='src\assets\HostalRemovedBG.png' alt='logo'/>
+                <img class='login-img' src='..\src\assets\HostalRemovedBG.png' alt='logo'/>
             </div>
             <div class='login-data-container'>
                 <div> 
@@ -24,6 +24,8 @@
                     <input id="Password" type='password' pattern={String.raw`.{6,}`} on:change={backgroundPassword} on:input={passwordChange} title="6 caracteres minimo" name='password'/>  
                     <label for="Phone" class='login-h3'>Numero de telefono (Ej: +123123123):</label>
                     <input id="Phone" type='text' name='cellphone' class='login-input'/>  
+                    <label for="DateOfBirth" class='login-h3'>Fecha de nacimiento:</label>
+                    <input id="DateOfBirth" type='date' name='date_of_birth' min="1990-01-01" class='login-input' required/>  
                 </div>
                 <div class='login-submit-container'>
                     <input name="register" type='submit' value='Registrarse'/>
